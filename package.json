@@ -1,0 +1,25 @@
+{
+  "name": "remark-variables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nyc": "^13.0.1",
+    "remark-parse": "^5.0.0",
+    "remark-preset-lint-recommended": "^3.0.2",
+    "remark-stringify": "^5.0.0",
+    "tap": "^12.0.1",
+    "to-vfile": "^5.0.1",
+    "unified": "^7.0.0",
+    "vfile-reporter": "^5.0.0",
+    "yaml": "^1.0.0"
+  },
+  "dependencies": {
+    "xtend": "^4.0.1"
+  }
+}

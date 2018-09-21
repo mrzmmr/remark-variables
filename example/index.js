@@ -1,0 +1,23 @@
+var linter = require('remark-preset-lint-recommended')
+var unified = require('unified')
+var parser = require('remark-parse')
+var compiler = require('remark-stringify')
+var reporter = require('vfile-reporter')
+var toVfile = require('to-vfile')
+var variables = require('..')
+var remark = require('remark')
+
+var markdown = toVfile.readSync('./example.md')
+
+unified()
+  .use(parser)
+  .use(compiler)
+  .use(linter)
+  .use(variables, [ '{{', '}}' ])
+  .data('title', 'Example')
+  .data('subtitle', 'Using variables in markdown')
+  .data('list', [ 0, 'one', true ])
+  .process(markdown, function (err, file) {
+    console.error(reporter(err || file))
+    console.log(file.toString())
+  })
