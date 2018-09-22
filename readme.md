@@ -67,7 +67,7 @@ would output
 
 Type: `Object` | `Array` | `String`
 
-If options is a string, then it is used as the opening and closing fence markers, for example: `.use(variables, ':')` would match `:some.variable[0]:`. If options is an array, options[0] and options[1] are used as fence markers.
+If options is a string, then it is used as the opening and closing fence markers, for example: `.use(variables, ':')` would match `:some.variable[0]:` look for `vfile.data.some.variable[0]`. If options is an array, options[0] and options[1] are used as fence markers.
 
 #### fence
 
