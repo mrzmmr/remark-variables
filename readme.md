@@ -62,6 +62,21 @@ would output
 
 > Variables in markdown!
 ```
+
+### Options
+
+Type: `Object` | `Array` | `String`
+
+If options is a string, then it is used as the opening and closing fence markers, for example: `.use(variables, ':')` would match `:some.variable[0]:`. If options is an array, options[0] and options[1] are used as fence markers.
+
+#### fence
+
+Type: `Array`
+
+Default: [ '{{', '}}' ]
+
+Markers used to denote a variable to be replaced.
+
 ## License
 
 MIT &copy; Paul Zimmer
