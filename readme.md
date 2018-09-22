@@ -1,5 +1,9 @@
 # remark-variables
 
+[![Travis](https://img.shields.io/travis/mrzmmr/remark-variables.svg)](https://travis-ci.org/mrzmmr/remark-variables)
+[![Coverage
+Status](https://coveralls.io/repos/github/mrzmmr/remark-variables/badge.svg?branch=master)](https://coveralls.io/github/mrzmmr/remark-variables?branch=master)
+
 This plugin adds variables support to [remark](https://github.com/remarkjs/remark) using a customizable template syntax. Variables are checked against both the [vfile](https://github.com/vfile/vfile#vfiledata)'s, and [processor](https://github.com/unifiedjs/unified#processordatakey-value)'s **[data](https://github.com/vfile/vfile#vfiledata)** property and can use both dot and bracket syntax. For example, `foo.bar[0]` resolve to `vfile.data.foo.bar[0]` if it exists, or do nothing if the property does not exist. By default, this plugin uses double curly braces `{{`, `}}` to denote variables but can be configured.
 
 ## Install
