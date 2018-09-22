@@ -14,6 +14,8 @@ npm install --save remark-variables
 
 ## Usage
 
+If we have a file, example.md
+
 ```
 # {{ title }}
 
@@ -23,6 +25,7 @@ npm install --save remark-variables
 
 > {{ subtitle }}
 ```
+
 and
 
 ```js
@@ -54,7 +57,7 @@ processor().process(markdown, function (err, file) {
 })
 ```
 
-would output
+the output would be
 
 ```
 ./example.md: no issues found
