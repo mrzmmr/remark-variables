@@ -1,7 +1,7 @@
 # {{ title }}
 
-> {{ subtitle }}
+- {{ list[0] }} (string)
+- {{ list[1] }} (number)
+- {{ list[2] }} (boolean)
 
--   {{ list[0] }}
--   {{ list[1] }}
--   {{ list[2] }}
+> {{ subtitle }}
