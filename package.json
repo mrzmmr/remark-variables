@@ -6,8 +6,8 @@
   "scripts": {
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Paul Zimmer",
+  "license": "MIT",
   "devDependencies": {
     "nyc": "^13.0.1",
     "remark-parse": "^5.0.0",

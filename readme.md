@@ -62,3 +62,7 @@ would output
 
 > Variables in markdown!
 ```
+
+## License
+
+MIT &copy; Paul Zimmer
