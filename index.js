@@ -1,12 +1,12 @@
 var xtend = require('xtend')
 var tokenizer = require('./lib/tokenizer')
-var settings = require('./lib/settings')
 var visitor = require('./lib/visitor')
+var utils = require('./lib/utils')
 
 module.exports = variables
 
 function variables (options) {
-  options = settings(options)
+  options = utils.settings(options)
 
   var self = this
   var parser = self.Parser
