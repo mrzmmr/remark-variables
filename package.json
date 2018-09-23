@@ -1,6 +1,6 @@
 {
   "name": "remark-variables",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds variables support to remark",
   "main": "index.js",
   "scripts": {
@@ -30,9 +30,6 @@
     "unified": "^7.0.0",
     "vfile-reporter": "^5.0.0",
     "yaml": "^1.0.0"
-  },
-  "dependencies": {
-    "xtend": "^4.0.1"
   },
   "directories": {
     "example": "example"

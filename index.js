@@ -1,4 +1,3 @@
-var xtend = require('xtend')
 var tokenizer = require('./lib/tokenizer')
 var visitor = require('./lib/visitor')
 var utils = require('./lib/utils')
