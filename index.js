@@ -26,7 +26,7 @@ function variables (options) {
   }
 
   if (isCompiler(compiler)) {
-    attatchCompiler(name, compiler, visitor)
+    attatchCompiler(name, compiler, visitor(test))
   }
 }
 
