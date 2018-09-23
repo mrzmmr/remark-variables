@@ -136,5 +136,20 @@ test('variables', function (t) {
     t.ok(file.toString() === 'bar\n')
   }, 'should not throw with using test regex')
 
+  t.doesNotThrow(function () {
+    var file = unified()
+      .use(parser)
+      .use(compiler)
+      .use(variables)
+      .use(function () {
+        return function (tree, file) {
+          file.data.foo = 'bar'
+        }
+      })
+      .processSync('{{ foo }}')
+
+    t.ok(file.toString() === 'bar\n')
+  }, 'should not throw with data from transform stage')
+
   t.end()
 })
