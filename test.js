@@ -157,10 +157,38 @@ test('variables', function (t) {
       .use(compiler)
       .use(variables)
       .data('foo', 0)
-      .processSync('{{ foo }}')
+      .processSync('{{ .foo }}')
 
     t.ok(file.toString() === '0\n')
   }, 'should not throw and match when data value is zero')
+
+  t.throws(function () {
+    unified()
+      .use(parser)
+      .use(compiler)
+      .use(variables, { fail: true })
+      .processSync('{{ foo }}')
+  })
+
+  t.doesNotThrow(function () {
+    var file = unified()
+      .use(parser)
+      .use(compiler)
+      .use(variables)
+      .processSync('{{ .foo }}')
+
+    t.ok(file.messages[0].message === 'Could not resolve `data' + sub + '` in VFile or Processor.')
+  }, 'should not throw and should create message')
+
+  t.doesNotThrow(function () {
+    var file = unified()
+      .use(parser)
+      .use(compiler)
+      .use(variables, { quiet: true })
+      .processSync('{{ .foo }}')
+
+    t.ok(file.messages.length === 0)
+  }, 'should not throw and no messages with quiet option')
 
   t.end()
 })
