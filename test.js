@@ -151,5 +151,16 @@ test('variables', function (t) {
     t.ok(file.toString() === 'bar\n')
   }, 'should not throw with data from transform stage')
 
+  t.doesNotThrow(function () {
+    var file = unified()
+      .use(parser)
+      .use(compiler)
+      .use(variables)
+      .data('foo', 0)
+      .processSync('{{ foo }}')
+
+    t.ok(file.toString() === '0\n')
+  }, 'should not throw and match when data value is zero')
+
   t.end()
 })
