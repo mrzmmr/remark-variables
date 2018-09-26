@@ -160,7 +160,16 @@ test('variables', function (t) {
       .processSync('{{ .foo }}')
 
     t.ok(file.toString() === '0\n')
-  }, 'should not throw and match when data value is zero')
+
+    var file = unified()
+      .use(parser)
+      .use(compiler)
+      .use(variables)
+      .data('foo', false)
+      .processSync('{{ foo }}')
+
+    t.ok(file.toString() === 'false\n')
+  }, 'should not throw and match when data value is zero or false')
 
   t.throws(function () {
     unified()
