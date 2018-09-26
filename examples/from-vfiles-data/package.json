@@ -1,0 +1,10 @@
+{
+  "name": "remark-variables-example-from-vfiles-data",
+  "dependencies": {
+    "remark": "^9.0.0",
+    "remark-extract-frontmatter": "^2.0.0",
+    "remark-frontmatter": "^1.3.0",
+    "vfile-reporter": "^5.0.0",
+    "yaml": "^1.0.0"
+  }
+}
