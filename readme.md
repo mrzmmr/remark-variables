@@ -33,7 +33,7 @@ var unified = require('unified')
 var parser = require('remark-parse')
 var compiler = require('remark-stringify')
 var variables = require('remark-variables')
-var reporter = requir('vfile-reporter')
+var reporter = require('vfile-reporter')
 var toVfile = require('to-vfile')
 
 var markdown = toVfile('./example.md')
