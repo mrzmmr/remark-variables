@@ -9,7 +9,7 @@ var variables = require('../../')
 var markdown = `
 # [.title]
 
-> Some bold text __[.foo]__.
+> Some bold text __[.foo]__ cool.
 `
 
 remark()
