@@ -62,3 +62,5 @@ typings/
 
 # vim swap files
 *.sw[a-p]
+
+.DS_Store
