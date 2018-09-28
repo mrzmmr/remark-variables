@@ -39,7 +39,7 @@ function attatchParser (name, parser, tokenizer, locator) {
 
   tokenizer.locator = locator
   tokenizers[name] = tokenizer
-  methods.splice(methods.indexOf('text'), 0, name)
+  methods.splice(methods.indexOf('link'), 0, name)
 }
 
 function attatchCompiler (name, compiler, visitor) {
