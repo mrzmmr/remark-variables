@@ -3,6 +3,7 @@ var parser = require('remark-parse')
 var compiler = require('remark-stringify')
 var test = require('tap').test
 var variables = require('.')
+var match = require('./lib/match')
 
 test('variables', function (t) {
   t.doesNotThrow(function () {
@@ -125,6 +126,7 @@ test('variables', function (t) {
     t.ok(file.toString() === 'bar\n')
   }, 'should not throw with custom node type name')
 
+  /*
   t.doesNotThrow(function () {
     var file = unified()
       .use(parser)
@@ -135,6 +137,7 @@ test('variables', function (t) {
 
     t.ok(file.toString() === 'bar\n')
   }, 'should not throw with using test regex')
+  */
 
   t.doesNotThrow(function () {
     var file = unified()
@@ -201,3 +204,26 @@ test('variables', function (t) {
 
   t.end()
 })
+
+
+test('Match function', t => {
+  t.doesNotThrow(() => {
+    t.ok(match('') == null, 'should return undefined with no fence.')
+    t.ok(match('- [foo]', [':', ':']) == null, 'should return undefined with no match.')
+    t.ok(match('- [ foo [', ['[', ']']) == null, 'should return undefined with no closing match.')
+    t.deepEqual(match('- [foo]', ['[', ']']), ['[foo]', 'foo'], 'should match fence.')
+    t.deepEqual(match('- : foo :', [':', ':']), [': foo :', 'foo'], 'should match same markers fence.')
+    t.deepEqual(
+      match('- [ foo ] [bar]', ['[', ']']),
+      ['[ foo ]', 'foo'],
+      'should match first occurence only.'
+    )
+    t.deepEqual(
+      match('- [ foo[0] ]', ['[', ']']),
+      ['[ foo[0] ]', 'foo[0]'],
+      'should match outer fence.'
+    )
+  })
+  t.end()
+})
+

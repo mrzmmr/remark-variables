@@ -14,7 +14,8 @@ function variables (options) {
 
   var fail = options.fail
   var quiet = options.quiet
-  var opening = options.fence[0]
+  var fence = options.fence
+  var opening = fence[0]
   var name = options.name
   var test = options.test
 
@@ -22,13 +23,13 @@ function variables (options) {
     attatchParser(
       name,
       parser,
-      tokenizer(name, data, test, quiet, fail),
+      tokenizer(name, data, fence, quiet, fail),
       locator(opening)
     )
   }
 
   if (isCompiler(compiler)) {
-    attatchCompiler(name, compiler, visitor(test))
+    attatchCompiler(name, compiler, visitor(fence))
   }
 }
 
