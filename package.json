@@ -1,6 +1,6 @@
 {
   "name": "remark-variables",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Adds variables support to remark",
   "main": "index.js",
   "scripts": {
