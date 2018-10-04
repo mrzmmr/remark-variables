@@ -3,14 +3,15 @@ var reporter = require('vfile-reporter')
 var variables = require('../../')
 
 var markdown = `
-# :.title:
+# [.title]
 
-> :.subtitle:
+> [.subtitle[0]]
 `
 
 remark()
-  .use(variables, ':')
+  .use(variables, ['[', ']'])
   .data('title', 'Example with custom markers')
+  .data('subtitle', ['here'])
   .process(markdown, function (err, file) {
     console.error(reporter(err || file))
     console.log(String(file))
