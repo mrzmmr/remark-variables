@@ -209,17 +209,17 @@ test('variables', function (t) {
 test('Match function', t => {
   t.doesNotThrow(() => {
     t.ok(match('') == null, 'should return undefined with no fence.')
-    t.ok(match('- [foo]', [':', ':']) == null, 'should return undefined with no match.')
-    t.ok(match('- [ foo [', ['[', ']']) == null, 'should return undefined with no closing match.')
-    t.deepEqual(match('- [foo]', ['[', ']']), ['[foo]', 'foo'], 'should match fence.')
-    t.deepEqual(match('- : foo :', [':', ':']), [': foo :', 'foo'], 'should match same markers fence.')
+    t.ok(match('[foo]', [':', ':']) == null, 'should return undefined with no match.')
+    t.ok(match('[ foo [', ['[', ']']) == null, 'should return undefined with no closing match.')
+    t.deepEqual(match('[foo]', ['[', ']']), ['[foo]', 'foo'], 'should match fence.')
+    t.deepEqual(match(': foo :', [':', ':']), [': foo :', 'foo'], 'should match same markers fence.')
     t.deepEqual(
-      match('- [ foo ] [bar]', ['[', ']']),
+      match('[ foo ] [bar]', ['[', ']']),
       ['[ foo ]', 'foo'],
       'should match first occurence only.'
     )
     t.deepEqual(
-      match('- [ foo[0] ]', ['[', ']']),
+      match('[ foo[0] ]', ['[', ']']),
       ['[ foo[0] ]', 'foo[0]'],
       'should match outer fence.'
     )
