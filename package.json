@@ -4,9 +4,7 @@
   "description": "Adds variables support to remark",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf ./coverage .nyc_output",
-    "tap": "tap -Rspec test.js",
-    "test": "nyc npm run tap",
+    "test": "tap -Rspec --100 test.js",
     "report": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
@@ -19,17 +17,11 @@
   "author": "Paul Zimmer",
   "license": "MIT",
   "devDependencies": {
-    "coveralls": "^3.0.2",
-    "nyc": "^13.0.1",
+    "coveralls": "^3.0.5",
     "remark-parse": "^5.0.0",
-    "remark-preset-lint-recommended": "^3.0.2",
     "remark-stringify": "^5.0.0",
-    "rimraf": "^2.6.2",
-    "tap": "^12.0.1",
-    "to-vfile": "^5.0.1",
-    "unified": "^7.0.0",
-    "vfile-reporter": "^5.0.0",
-    "yaml": "^1.0.0"
+    "tap": "^12.7.0",
+    "unified": "^7.1.0"
   },
   "directories": {
     "example": "example"
