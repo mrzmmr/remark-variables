@@ -18,10 +18,8 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.5",
-    "remark-parse": "^5.0.0",
-    "remark-stringify": "^5.0.0",
-    "tap": "^12.7.0",
-    "unified": "^7.1.0"
+    "remark": "^10.0.1",
+    "tap": "^12.7.0"
   },
   "directories": {
     "example": "example"
