@@ -3,6 +3,9 @@
   "version": "1.4.5",
   "description": "Adds variables support to remark",
   "main": "index.js",
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "test": "tap -Rspec --100 test.js",
     "report": "nyc report --reporter=text-lcov | coveralls"
@@ -18,8 +21,8 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.5",
-    "remark": "^10.0.1",
-    "tap": "^12.7.0"
+    "remark": "^11.0.0",
+    "tap": "^14.4.3"
   },
   "directories": {
     "example": "example"
