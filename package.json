@@ -22,7 +22,7 @@
   "devDependencies": {
     "coveralls": "^3.0.5",
     "remark": "^11.0.0",
-    "tap": "^14.4.3"
+    "tap": "^14.10.7"
   },
   "directories": {
     "example": "example"
